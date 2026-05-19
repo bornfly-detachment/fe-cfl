@@ -1,0 +1,85 @@
+{
+  "threshold": 0.02,
+  "width": 1365,
+  "height": 900,
+  "results": [
+    {
+      "route": "/prvse-world",
+      "source": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/prvse-world.source.png",
+      "target": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/prvse-world.target.png",
+      "diff": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/prvse-world.diff.png",
+      "width": 1365,
+      "height": 900,
+      "pixels": 1228500,
+      "differentPixels": 1217506,
+      "ratio": 0.9910508750508751,
+      "meanAbsRgb": 16.987375390042057,
+      "pass": false
+    },
+    {
+      "route": "/blog",
+      "source": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/blog.source.png",
+      "target": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/blog.target.png",
+      "diff": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/blog.diff.png",
+      "width": 1365,
+      "height": 900,
+      "pixels": 1228500,
+      "differentPixels": 0,
+      "ratio": 0,
+      "meanAbsRgb": 0,
+      "pass": true
+    },
+    {
+      "route": "/theory",
+      "source": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/theory.source.png",
+      "target": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/theory.target.png",
+      "diff": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/theory.diff.png",
+      "width": 1365,
+      "height": 900,
+      "pixels": 1228500,
+      "differentPixels": 1628,
+      "ratio": 0.0013251933251933253,
+      "meanAbsRgb": 2.0514407814407813,
+      "pass": true
+    },
+    {
+      "route": "/free-code",
+      "source": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/free-code.source.png",
+      "target": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/free-code.target.png",
+      "diff": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/free-code.diff.png",
+      "width": 1365,
+      "height": 900,
+      "pixels": 1228500,
+      "differentPixels": 117752,
+      "ratio": 0.09585022385022385,
+      "meanAbsRgb": 2.9107342287342286,
+      "pass": false
+    },
+    {
+      "route": "/login",
+      "source": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/login.source.png",
+      "target": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/login.target.png",
+      "diff": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/login.diff.png",
+      "width": 1365,
+      "height": 900,
+      "pixels": 1228500,
+      "differentPixels": 6498,
+      "ratio": 0.005289377289377289,
+      "meanAbsRgb": 0.3065999185999186,
+      "pass": true
+    },
+    {
+      "route": "/settings",
+      "source": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/settings.source.png",
+      "target": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/settings.target.png",
+      "diff": "/Users/Shared/codex-workspace/fe-cfl/docs/evidence/visual-diff/2026-05-18T07-15-29-559Z/settings.diff.png",
+      "width": 1365,
+      "height": 900,
+      "pixels": 1228500,
+      "differentPixels": 1112863,
+      "ratio": 0.9058713878713879,
+      "meanAbsRgb": 15.165804911138245,
+      "pass": false
+    }
+  ]
+}

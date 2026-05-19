@@ -1,0 +1,25 @@
+{
+  "_doc": "fe-cfl standalone Free-Code tier registry. The source routes are copied exactly; this local config points T2 at /bin/bash so the CFL can run without the original free-code binary.",
+  "default_tier": "T2",
+  "tiers": {
+    "T2": {
+      "id": "T2",
+      "label": "Standalone Shell",
+      "description": "Host shell fallback for the extracted fe-cli-bridge-cfl runtime",
+      "color": "violet",
+      "enabled": true,
+      "spawn_user": null,
+      "default_cwd": "/Users/Shared/codex-workspace/fe-cfl",
+      "scope": {
+        "readable": ["/Users/Shared/codex-workspace/fe-cfl"],
+        "writable": ["/Users/Shared/codex-workspace/fe-cfl"],
+        "description": "Standalone FE-CFL verification shell. Original provider registry stays in /Users/Shared/egonetics/main."
+      },
+      "env": {},
+      "session_prefix": "fe-cfl-shell",
+      "binary": "/bin/bash",
+      "startup_flags": [],
+      "model_hint": "bash"
+    }
+  }
+}

@@ -29,14 +29,14 @@ export default {
       '@/stores/useAuthStore': path.join(root, 'src/stores/useAuthStore.ts'),
       '@/stores/useChronicleStore': path.join(root, 'src/stores/useChronicleStore.ts'),
       '@/stores/useThemeStore': path.join(root, 'src/stores/useThemeStore.ts'),
-      '@': '/Users/Shared/egonetics/main/src',
-      '@prvse': '/Users/Shared/egonetics/prvse_world_workspace/src',
+      '@': path.join(root, 'src'),
+      '@prvse': path.join(root, 'src/cfl/prvse-world'),
     },
   },
   server: {
     host: '127.0.0.1',
     fs: {
-      allow: [root, '/Users/Shared/egonetics/main', '/Users/Shared/egonetics/prvse_world_workspace'],
+      allow: [root],
     },
     proxy: {
       '/api': {

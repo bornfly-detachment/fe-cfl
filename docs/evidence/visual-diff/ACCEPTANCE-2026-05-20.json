@@ -1,0 +1,71 @@
+{
+  "cfl": "fe-cfl",
+  "accepted_at": "2026-05-20T04:45:00+08:00",
+  "source_authority": {
+    "repo": "/Users/Shared/egonetics-opencode",
+    "ref": "d33562779ec6596aeadbc1bedb4efa28f0c114f2",
+    "migration_check": "38/38 mandatory files are exact SHA-256 copies"
+  },
+  "verification": {
+    "commands": [
+      "npm run verify:migration",
+      "npm run typecheck",
+      "npm run test",
+      "npm run build"
+    ],
+    "status": "pass"
+  },
+  "routes": [
+    {
+      "route": "/blog",
+      "cfl": "fe-rich-editor-cfl",
+      "acceptance": "dual_webview_visual_snapshot",
+      "status": "pass",
+      "evidence": "/Users/Shared/fe-pk/docs/evidence/pk/2026-05-19T20-20-01-295Z/blog.pk.png"
+    },
+    {
+      "route": "/theory",
+      "cfl": "fe-rich-editor-cfl",
+      "acceptance": "dual_webview_visual_snapshot",
+      "status": "pass",
+      "evidence": "/Users/Shared/fe-pk/docs/evidence/pk/2026-05-19T20-22-25-800Z/theory.pk.png"
+    },
+    {
+      "route": "/login",
+      "cfl": "fe-login-cfl",
+      "acceptance": "dual_webview_visual_snapshot",
+      "status": "pass",
+      "evidence": "/Users/Shared/fe-pk/docs/evidence/pk/2026-05-19T20-22-33-850Z/login.pk.png"
+    },
+    {
+      "route": "/settings",
+      "cfl": "fe-login-cfl",
+      "acceptance": "dual_webview_visual_snapshot",
+      "status": "pass",
+      "evidence": "/Users/Shared/fe-pk/docs/evidence/pk/2026-05-19T20-21-02-396Z/settings.pk.png"
+    },
+    {
+      "route": "/prvse-world",
+      "cfl": "fe-prvse-world-cfl",
+      "acceptance": "structural_explanation",
+      "status": "pass_with_explanation",
+      "reason": "Three.js realtime 3D scene has animation, random initialization, and floating-point rendering variance; pixel diff is not a deterministic Value metric for this route.",
+      "evidence": "docs/evidence/visual-diff/STRUCTURAL-EXPLANATION-2026-05-20.md"
+    },
+    {
+      "route": "/free-code",
+      "cfl": "fe-cli-bridge-cfl",
+      "acceptance": "structural_explanation",
+      "status": "pass_with_explanation",
+      "reason": "PTY/terminal bridge output includes prompt, connection timing, and shell state variance; terminal content region is a known explainable diff.",
+      "evidence": "docs/evidence/visual-diff/STRUCTURAL-EXPLANATION-2026-05-20.md"
+    }
+  ],
+  "summary": {
+    "routes_total": 6,
+    "dual_webview_visual_snapshot_pass": 4,
+    "structural_explanation_pass": 2,
+    "failed": 0,
+    "note": "fe-pk evidence is a one-shot dual-WebView screenshot for human/Value review, not an automated pixel-ratio metric. Historical latest.json remains the raw pixel-diff run and may contain expected failures for dynamic routes."
+  }
+}

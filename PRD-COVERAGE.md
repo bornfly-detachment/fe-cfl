@@ -23,3 +23,12 @@ Local browser smoke evidence is stored under `docs/evidence/`:
 - `fe-cfl-free-code-connected.png`
 
 The browser pass used Vite on `127.0.0.1:3041` plus the standalone API/free-code bridge on `127.0.0.1:3052`.
+
+## Final split recovery acceptance
+
+Final visual acceptance is recorded in:
+
+- `docs/evidence/visual-diff/ACCEPTANCE-2026-05-20.md`
+- `docs/evidence/visual-diff/ACCEPTANCE-2026-05-20.json`
+
+Wording lock: fe-pk route evidence is dual-WebView snapshot evidence, not an automated pixel-ratio PASS metric. Historical `latest.json` remains the raw pixel-diff run.

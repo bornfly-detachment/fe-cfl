@@ -242,8 +242,8 @@ function mdReport(results) {
   const lines = [
     '# fe-cfl visual diff report',
     '',
-    `- source: /Users/Shared/egonetics/main direct component harness`,
-    `- target: /Users/Shared/codex-workspace/fe-cfl`,
+    `- source: fe-cfl/src/components/ direct harness (byte-for-byte with egonetics@d3356277)`,
+    `- target: fe-cfl/src/cfl/ migrated CFL components`,
     `- viewport: ${width}x${height}`,
     `- threshold: ${(threshold * 100).toFixed(2)}% different pixels`,
     '',

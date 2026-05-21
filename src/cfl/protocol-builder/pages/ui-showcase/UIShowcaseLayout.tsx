@@ -11,17 +11,20 @@ import {
 } from "lucide-react";
 
 const navItems = [
-  { path: "/ui-showcase", label: "Overview", icon: LayoutDashboard },
-  { path: "/ui-showcase/prompt", label: "Prompt Hub", icon: Sparkles },
-  { path: "/ui-showcase/agent", label: "Agent Workspace", icon: MessageSquare },
-  { path: "/ui-showcase/flow", label: "Flow Editor", icon: Workflow },
-  { path: "/ui-showcase/board", label: "Pipeline Board", icon: LayoutDashboard },
-  { path: "/ui-showcase/inbox", label: "Inbox Center", icon: Mail },
-  { path: "/ui-showcase/onboarding", label: "Onboarding", icon: GraduationCap },
+  { path: "", label: "Overview", icon: LayoutDashboard },
+  { path: "/prompt", label: "Prompt Hub", icon: Sparkles },
+  { path: "/agent", label: "Agent Workspace", icon: MessageSquare },
+  { path: "/flow", label: "Flow Editor", icon: Workflow },
+  { path: "/board", label: "Pipeline Board", icon: LayoutDashboard },
+  { path: "/inbox", label: "Inbox Center", icon: Mail },
+  { path: "/onboarding", label: "Onboarding", icon: GraduationCap },
 ];
 
 export function UIShowcaseLayout({ children }: { children: React.ReactNode }) {
   const location = useLocation();
+  const basePath = location.pathname.startsWith("/protocol/ui-showcase")
+    ? "/protocol/ui-showcase"
+    : "/ui-showcase";
 
   return (
     <div className="min-h-screen bg-white text-gray-900 flex">
@@ -29,21 +32,22 @@ export function UIShowcaseLayout({ children }: { children: React.ReactNode }) {
       <aside className="w-64 border-r border-gray-200 bg-gray-50 flex flex-col sticky top-0 h-screen">
         <div className="p-4 border-b border-gray-200 flex items-center gap-2">
           <Link
-            to="/home"
+            to="/protocol"
             className="flex items-center gap-2 text-gray-600 hover:text-gray-900 transition-colors"
           >
             <ChevronLeft className="w-4 h-4" />
-            <span className="text-sm font-medium">Back to App</span>
+            <span className="text-sm font-medium">Protocol</span>
           </Link>
         </div>
         <nav className="flex-1 p-3 space-y-1 overflow-y-auto">
           {navItems.map((item) => {
             const Icon = item.icon;
-            const isActive = location.pathname === item.path;
+            const path = `${basePath}${item.path}`;
+            const isActive = location.pathname === path;
             return (
               <Link
-                key={item.path}
-                to={item.path}
+                key={path}
+                to={path}
                 className={`flex items-center gap-3 px-3 py-2.5 rounded-lg text-sm font-medium transition-colors ${
                   isActive
                     ? "bg-gray-900 text-white"

@@ -6,7 +6,7 @@
 import { useState, useEffect, useCallback } from 'react'
 import { RefreshCw, BarChart3, SlidersHorizontal, Plus, Trash2, Edit2, X, Lock } from 'lucide-react'
 
-const SEAI_BASE = 'http://localhost:8000'
+const SEAI_BASE = '/seai'
 
 // ── 类型 ──────────────────────────────────────────────────────────────────────
 

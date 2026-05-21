@@ -1,4 +1,5 @@
 export { default as ProtocolView } from './components/ProtocolView'
+export { default as ProtocolShell } from './components/ProtocolShell'
 export { default as ProtocolBuilderView } from './components/ProtocolBuilderView'
 export { default as ResourceProtocolPage } from './pages/protocol/ResourceProtocolPage'
 export { default as TagTreeView } from './components/TagTreeView'

@@ -1,4 +1,4 @@
-import { NavLink, Navigate, Route, Routes } from 'react-router-dom'
+import { NavLink, Navigate, Route, Routes, useLocation } from 'react-router-dom'
 import PrvseWorldView from './cfl/prvse-world/PrvseWorldView'
 import BlogPage from './cfl/rich-editor/BlogPage'
 import TheoryPageView from './cfl/rich-editor/TheoryPageView'
@@ -6,19 +6,7 @@ import FreeCodeTerminal from './cfl/cli-bridge/FreeCodeTerminal'
 import LoginPage from './cfl/login/LoginPage'
 import AppearancePage from './cfl/login/settings/AppearancePage'
 import ObsidianCfl from './cfl/obsidian/ObsidianCfl'
-import {
-  CyberneticsSystemView,
-  FontCompare,
-  LabView,
-  PRVDemo,
-  PRVSEUIDemo,
-  ProtocolBuilderView,
-  ProtocolView,
-  ResourceProtocolPage,
-  TagTreeView,
-  UIShowcaseOneStepRoutes,
-  UIShowcaseRoutes,
-} from './cfl/protocol-builder'
+import { ProtocolShell } from './cfl/protocol-builder'
 import { CanvasView, EgoneticsSubjectPage, EgoneticsView, RelationDetailView } from './cfl/canvas-relation'
 import { KanbanBoard, TaskDetailPage } from './cfl/task-lifecycle'
 import {
@@ -46,6 +34,11 @@ const routes = [
   { to: '/login', label: 'Login' },
   { to: '/settings', label: 'Settings' },
 ]
+
+function RedirectIntoProtocol() {
+  const location = useLocation()
+  return <Navigate to={`/protocol${location.pathname}${location.search}${location.hash}`} replace />
+}
 
 export default function App() {
   const visualMode = typeof window !== 'undefined' && new URLSearchParams(window.location.search).has('visual')
@@ -77,17 +70,15 @@ export default function App() {
           <Route path="/" element={<Navigate to="/prvse-world" replace />} />
           <Route path="/prvse-world" element={<PrvseWorldView />} />
           <Route path="/obsidian" element={<ObsidianCfl />} />
-          <Route path="/protocol" element={<ProtocolView />} />
-          <Route path="/protocol/builder" element={<ProtocolBuilderView />} />
-          <Route path="/protocol/resource" element={<ResourceProtocolPage />} />
-          <Route path="/tag-tree" element={<TagTreeView />} />
-          <Route path="/lab" element={<LabView />} />
-          <Route path="/prv-demo" element={<PRVDemo />} />
-          <Route path="/font-compare" element={<FontCompare />} />
-          <Route path="/prvse-ui" element={<PRVSEUIDemo />} />
-          <Route path="/cybernetics" element={<CyberneticsSystemView />} />
-          <Route path="/ui-showcase/*" element={<UIShowcaseRoutes />} />
-          <Route path="/ui-showcase-one-step/*" element={<UIShowcaseOneStepRoutes />} />
+          <Route path="/protocol/*" element={<ProtocolShell />} />
+          <Route path="/tag-tree" element={<RedirectIntoProtocol />} />
+          <Route path="/lab" element={<RedirectIntoProtocol />} />
+          <Route path="/prv-demo" element={<RedirectIntoProtocol />} />
+          <Route path="/font-compare" element={<RedirectIntoProtocol />} />
+          <Route path="/prvse-ui" element={<RedirectIntoProtocol />} />
+          <Route path="/cybernetics" element={<RedirectIntoProtocol />} />
+          <Route path="/ui-showcase/*" element={<RedirectIntoProtocol />} />
+          <Route path="/ui-showcase-one-step/*" element={<RedirectIntoProtocol />} />
           <Route path="/egonetics" element={<EgoneticsView />} />
           <Route path="/egonetics/canvas/:canvasId" element={<CanvasView />} />
           <Route path="/egonetics/:subjectId" element={<EgoneticsSubjectPage />} />

@@ -14,7 +14,7 @@ import SEAIVPanel from './SEAIVPanel'
 import CyberneticsTree from './CyberneticsTree'
 
 // ── SEAI ────────────────────────────────────────────────────────
-const SEAI_BASE = 'http://localhost:8000'
+const SEAI_BASE = '/seai'
 
 const seaiFetch = async <T = unknown>(path: string, opts?: RequestInit): Promise<T> => {
   const r = await fetch(`${SEAI_BASE}${path}`, {

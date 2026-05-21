@@ -23,14 +23,14 @@ Routes to merge:
 - `/protocol`
 - `/protocol/builder`
 - `/protocol/resource`
-- `/tag-tree`
-- `/lab`
-- `/prv-demo`
-- `/font-compare`
-- `/prvse-ui`
-- `/cybernetics`
-- `/ui-showcase/*`
-- `/ui-showcase-one-step/*`
+- `/protocol/tag-tree`
+- `/protocol/lab`
+- `/protocol/prv-demo`
+- `/protocol/font-compare`
+- `/protocol/prvse-ui`
+- `/protocol/cybernetics`
+- `/protocol/ui-showcase/*`
+- `/protocol/ui-showcase-one-step/*`
 
 Primary source files:
 

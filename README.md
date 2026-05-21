@@ -11,6 +11,12 @@ This is a **code migration runtime**, not a rewrite. The four PRD routes are mou
 - `/login` → `src/cfl/login/LoginPage.tsx`
 - `/settings` → `src/cfl/login/settings/AppearancePage.tsx`
 
+## Expansion PRDs
+
+Additional functional CFL boundaries are defined in `docs/prd/`. These are not route-only splits; each PRD captures a reusable UI capability, data contract, source scope, and acceptance criteria.
+
+Each CFL is intended to become its own GitHub repository under `bornfly-detachment`; this repo remains the integration and extraction reference.
+
 ## v2 migration rule
 
 Mandatory PRD files are copied byte-for-byte from the source frontend. Run:

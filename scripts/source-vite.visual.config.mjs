@@ -6,10 +6,11 @@ import tailwindcss from 'tailwindcss'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const harnessRoot = path.join(root, 'visual-harness/source')
+const cacheKey = (process.env.FE_CFL_API_TARGET || 'default').replace(/[^a-z0-9.-]/gi, '-')
 
 export default {
   root: harnessRoot,
-  cacheDir: path.join(root, '.visual-cache/source-vite'),
+  cacheDir: path.join(root, '.visual-cache/source-vite', cacheKey),
   plugins: [react({ fastRefresh: false })],
   css: {
     postcss: {
@@ -21,6 +22,7 @@ export default {
   },
   resolve: {
     alias: {
+      '@egonetics/core/contract': path.join(root, 'src/lib/egonetics-core-contract.ts'),
       '@/components': path.join(root, 'src/components'),
       '@/kernel/compiler': path.join(root, 'src/kernel/compiler/index.ts'),
       '@/lib/http': path.join(root, 'src/lib/http.ts'),
@@ -40,6 +42,10 @@ export default {
     },
     proxy: {
       '/api': {
+        target: process.env.FE_CFL_API_TARGET || 'http://127.0.0.1:3052',
+        changeOrigin: true,
+      },
+      '/seai': {
         target: process.env.FE_CFL_API_TARGET || 'http://127.0.0.1:3052',
         changeOrigin: true,
       },

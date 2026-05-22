@@ -14,8 +14,17 @@
     "strict": true,
     "baseUrl": ".",
     "paths": {
-      "@egonetics/core/contract": ["src/lib/egonetics-core-contract.ts"],
-      "@/*": ["src/*"]
+      "@bornfly-detachment/fe-canvas-relation-cfl": ["src/package-types/cfl-packages.d.ts"],
+      "@bornfly-detachment/fe-cli-bridge-cfl": ["src/package-types/cfl-packages.d.ts"],
+      "@bornfly-detachment/fe-control-plane-cfl": ["src/package-types/cfl-packages.d.ts"],
+      "@bornfly-detachment/fe-login-cfl": ["src/package-types/cfl-packages.d.ts"],
+      "@bornfly-detachment/fe-memory-chronicle-cfl": ["src/package-types/cfl-packages.d.ts"],
+      "@bornfly-detachment/fe-obsidian-cfl": ["src/package-types/cfl-packages.d.ts"],
+      "@bornfly-detachment/fe-protocol-builder-cfl": ["src/package-types/cfl-packages.d.ts"],
+      "@bornfly-detachment/fe-prvse-world-cfl": ["src/package-types/cfl-packages.d.ts"],
+      "@bornfly-detachment/fe-resource-intelligence-cfl": ["src/package-types/cfl-packages.d.ts"],
+      "@bornfly-detachment/fe-rich-editor-cfl": ["src/package-types/cfl-packages.d.ts"],
+      "@bornfly-detachment/fe-task-lifecycle-cfl": ["src/package-types/cfl-packages.d.ts"]
     }
   },
   "include": ["src", "vite.config.ts"]

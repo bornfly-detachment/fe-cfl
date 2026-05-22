@@ -1,0 +1,44 @@
+name: cfl-shell-ci
+
+on:
+  pull_request:
+  push:
+    branches:
+      - main
+      - 'cfl/**'
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  npm-ci:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          persist-credentials: false
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22.14.0
+          cache: npm
+
+      - name: Install dependencies
+        env:
+          CFL_READ_TOKEN: ${{ secrets.BORNFLY_CFL_READ_TOKEN || github.token }}
+        run: |
+          if [ -z "$CFL_READ_TOKEN" ]; then
+            echo "BORNFLY_CFL_READ_TOKEN is required when dependent CFL repos are private." >&2
+            exit 1
+          fi
+          BASIC_AUTH="$(printf 'x-access-token:%s' "$CFL_READ_TOKEN" | base64 -w 0)"
+          export GIT_CONFIG_COUNT=3
+          export GIT_CONFIG_KEY_0=http.https://github.com/.extraheader
+          export GIT_CONFIG_VALUE_0="AUTHORIZATION: basic ${BASIC_AUTH}"
+          export GIT_CONFIG_KEY_1=url.https://github.com/.insteadOf
+          export GIT_CONFIG_VALUE_1=ssh://git@github.com/
+          export GIT_CONFIG_KEY_2=url.https://github.com/.insteadOf
+          export GIT_CONFIG_VALUE_2=git@github.com:
+          npm ci
+      - run: npm run ci

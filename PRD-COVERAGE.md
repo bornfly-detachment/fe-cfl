@@ -1,34 +1,18 @@
-# fe-cfl PRD v2 coverage
+# fe-cfl PRD Coverage
 
-Source PRD: `/Users/Shared/product-docs/prd-core/fe-cfl/`.
+`fe-cfl` no longer proves coverage by copying files from egonetics. Coverage now comes from the 11 independent CFL repositories and their own PRDs, CI checks, and package entrypoints.
 
-## Exact migration
+This repo verifies only the integration boundary:
 
-`npm run verify:migration` verifies every mandatory v2 file with SHA-256 against `/Users/Shared/egonetics/main`.
+- CFL implementation source is absent locally.
+- Every mounted CFL is a package dependency under `@bornfly-detachment/*`.
+- Every CFL dependency is pinned to a GitHub commit.
+- Route wiring imports package entrypoints, not `./src/cfl`.
 
-- `fe-prvse-world-cfl`: 25 listed runtime files copied into `src/cfl/prvse-world/`.
-- `fe-rich-editor-cfl`: 5 listed files copied into `src/cfl/rich-editor/`; additional editor transitive dependencies are copied so the runtime builds.
-- `fe-cli-bridge-cfl`: `FreeCodeTerminal.tsx` plus `server/routes/free-code.js` and `server/routes/free-code-ws.js` copied exactly.
-- `fe-login-cfl`: `LoginPage.tsx`, `AppearancePage.tsx`, auth/theme stores, translations, and utils copied exactly.
+Run:
 
-## Minimal runtime adaptations
+```bash
+npm run verify:boundary
+```
 
-The source frontend remains read-only. Adaptations are local compatibility boundaries only: route shell, Vite/Tailwind config, app-wide store/compiler stubs, and legacy-route placeholders for views outside the four PRDs.
-
-## Browser evidence
-
-Local browser smoke evidence is stored under `docs/evidence/`:
-
-- `fe-cfl-prvse-world.png`
-- `fe-cfl-free-code-connected.png`
-
-The browser pass used Vite on `127.0.0.1:3041` plus the standalone API/free-code bridge on `127.0.0.1:3052`.
-
-## Final split recovery acceptance
-
-Final visual acceptance is recorded in:
-
-- `docs/evidence/visual-diff/ACCEPTANCE-2026-05-20.md`
-- `docs/evidence/visual-diff/ACCEPTANCE-2026-05-20.json`
-
-Wording lock: fe-pk route evidence is dual-WebView snapshot evidence, not an automated pixel-ratio PASS metric. Historical `latest.json` remains the raw pixel-diff run.
+Historical visual-diff evidence remains under `docs/evidence/`, but new L0 correctness must be proven in the owning CFL repository.

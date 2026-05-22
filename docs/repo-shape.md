@@ -1,8 +1,11 @@
-# Repo shape
+# Repo Shape
 
-- `src/cfl/prvse-world/` — exact migrated PRVSE world files.
-- `src/cfl/rich-editor/` — exact migrated blog/theory/page-manager/API/types plus editor transitive dependencies.
-- `src/cfl/cli-bridge/` — exact migrated `FreeCodeTerminal`.
-- `src/cfl/login/` — exact migrated login/settings pages.
-- `server/routes/` — exact migrated free-code backend routes.
-- `src/components/` — import-contract compatibility for PRVSE `L1Panel` boundaries.
+`fe-cfl` is a shell repo. It keeps only:
+
+- `src/App.tsx` route aggregation.
+- `src/main.tsx` browser bootstrap.
+- `src/package-types/` shallow package type shims.
+- `scripts/verify-package-boundary.mjs` boundary verification.
+- Historical docs and evidence.
+
+Implementation code belongs in the owning `@bornfly-detachment/fe-*-cfl` GitHub repositories and is consumed through pinned package dependencies.

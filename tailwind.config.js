@@ -1,11 +1,12 @@
+import typography from '@tailwindcss/typography'
+
 /** @type {import('tailwindcss').Config} */
 export default {
   darkMode: ['class'],
   content: [
     './index.html',
     './src/**/*.{js,ts,jsx,tsx}',
-    './visual-harness/**/*.{js,ts,jsx,tsx}',
-    '/Users/Shared/egonetics/main/src/**/*.{js,ts,jsx,tsx}',
+    './node_modules/@bornfly-detachment/*/src/**/*.{js,ts,jsx,tsx}',
   ],
   theme: {
     extend: {
@@ -19,6 +20,20 @@ export default {
         popover: {
           DEFAULT: 'hsl(var(--popover))',
           foreground: 'hsl(var(--popover-foreground))',
+        },
+        primary: {
+          DEFAULT: 'hsl(var(--primary))',
+          foreground: 'hsl(var(--primary-foreground))',
+          50: '#eef2ff',
+          100: '#e0e7ff',
+          200: '#c7d2fe',
+          300: '#a5b4fc',
+          400: '#818cf8',
+          500: '#6366f1',
+          600: '#4f46e5',
+          700: '#4338ca',
+          800: '#3730a3',
+          900: '#312e81',
         },
         secondary: {
           DEFAULT: 'hsl(var(--secondary))',
@@ -67,20 +82,6 @@ export default {
           s: '#2563eb',
           e: '#6b7280',
         },
-        primary: {
-          DEFAULT: 'hsl(var(--primary))',
-          foreground: 'hsl(var(--primary-foreground))',
-          50: '#eef2ff',
-          100: '#e0e7ff',
-          200: '#c7d2fe',
-          300: '#a5b4fc',
-          400: '#818cf8',
-          500: '#6366f1',
-          600: '#4f46e5',
-          700: '#4338ca',
-          800: '#3730a3',
-          900: '#312e81',
-        },
         neutral: {
           50: '#fafafa',
           100: '#f5f5f5',
@@ -116,5 +117,5 @@ export default {
       },
     },
   },
-  plugins: [require('@tailwindcss/typography')],
+  plugins: [typography],
 }
